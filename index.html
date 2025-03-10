@@ -1,0 +1,116 @@
+<!-- -->
+<!-- eslint-disable @html-eslint/attrs-newline -->
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Страница с разными вариантами реализации переключателя без видимого label" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Варианты реализации элемента управления "переключатель"</title>
+		<script type="module" crossorigin src="/toggle-a11y-variants/assets/index-Dv_7zETp.js"></script>
+		<link rel="stylesheet" crossorigin href="/toggle-a11y-variants/assets/index-CaNS8gJ8.css">
+	</head>
+	<body>
+		<h1>Варианты реализации элемента управления "переключатель"</h1>
+		<p>
+			На странице демонстрируются разные варианты реализации переключателя в условиях,
+			когда он не имеет видимого текстового описания. Страница реализована для тестирования доступности элементов.
+		</p>
+
+		<h2>Кнопка без аттрибута role, без аттрибута title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему"
+			aria-pressed="false"
+			data-button
+		></button>
+
+		<h2>Кнопка без role, с указанным аттрибутом title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему"
+			title="Переключиться на тёмную тему"
+			aria-pressed="false"
+			data-button
+		></button>
+
+		<h2>Кнопка с role="switch", без аттрибута title</h2>
+		<button
+			type="button"
+			role="switch"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему"
+			aria-checked="false"
+			data-button
+		></button>
+
+		<h2>Кнопка с role="switch" и указанным атрибутом title</h2>
+		<button
+			type="button"
+			role="switch"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему"
+			title="Переключиться на тёмную тему"
+			aria-checked="false"
+			data-button
+		></button>
+
+		<h2>Флажок без аттрибута title у label, к которому он относится</h2>
+		<label
+			class="ui-toggle"
+			data-checkbox-label
+		>
+			<input
+				aria-label="Включить тёмную тему"
+				class="ui-toggle__input"
+				type="checkbox"
+				value=""
+				data-checkbox
+			/>
+		</label>
+
+		<h2>Флажок с указанным title на теге label, к которому он относится</h2>
+		<label
+			class="ui-toggle"
+			title="Переключиться на тёмную тему"
+			data-checkbox-label
+		>
+			<input
+				class="ui-toggle__input"
+				type="checkbox"
+				value=""
+				data-checkbox
+				aria-label="Включить тёмную тему"
+			/>
+		</label>
+
+		<h2>Группа радиокнопок</h2>
+		<fieldset
+			class="ui-toggle"
+			aria-label="Выбрать цветовую тему"
+			title="Переключиться на тёмную тему"
+			data-radio-wrapper
+		>
+			<input
+				class="ui-toggle__input"
+				name="toggle"
+				type="radio"
+				value="light"
+				checked
+				aria-label="Светлая тема"
+				data-radio
+			/>
+			<input
+				class="ui-toggle__input"
+				name="toggle"
+				type="radio"
+				value="dark"
+				aria-label="Тёмная тема"
+				data-radio
+			/>
+		</fieldset>
+	</body>
+
+</html>
