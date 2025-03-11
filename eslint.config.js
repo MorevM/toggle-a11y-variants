@@ -9,6 +9,11 @@ export default combine([
 	defineConfiguration('json'),
 	defineConfiguration('markdown'),
 	defineConfiguration('yaml'),
-	defineConfiguration('html'),
+	defineConfiguration('html', {
+		overrides: {
+			'@html-eslint/attrs-newline': 'off',
+			'@html-eslint/element-newline': 'off',
+		},
+	}),
 	defineConfiguration('typescript', {}),
 ]);
