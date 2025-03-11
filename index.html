@@ -1,5 +1,3 @@
-<!-- -->
-<!-- eslint-disable @html-eslint/attrs-newline -->
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
@@ -7,8 +5,8 @@
 		<meta name="description" content="Страница с разными вариантами реализации переключателя без видимого label" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Варианты реализации элемента управления "переключатель"</title>
-		<script type="module" crossorigin src="/toggle-a11y-variants/assets/index-Dv_7zETp.js"></script>
-		<link rel="stylesheet" crossorigin href="/toggle-a11y-variants/assets/index-CaNS8gJ8.css">
+		<script type="module" crossorigin src="/toggle-a11y-variants/assets/index-G7G0-So6.js"></script>
+		<link rel="stylesheet" crossorigin href="/toggle-a11y-variants/assets/index-USfu8VgQ.css">
 	</head>
 	<body>
 		<h1>Варианты реализации элемента управления "переключатель"</h1>
@@ -111,6 +109,29 @@
 				data-radio
 			/>
 		</fieldset>
+
+		<h2>Кнопка с кастомным aria-live, без аттрибута title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему, переключатель"
+			data-button
+		>
+			<!--  -->
+		</button>
+		<span aria-live="polite" data-notification></span>
+
+		<h2>Кнопка с кастомным aria-live, с аттрибутом title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему, переключатель"
+			title="Переключиться на тёмную тему"
+			data-button
+		>
+			<!--  -->
+		</button>
+		<span aria-live="polite" data-notification></span>
 	</body>
 
 </html>
