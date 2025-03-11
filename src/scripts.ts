@@ -1,7 +1,7 @@
 const LIGHT_LABEL = 'Переключиться на тёмную тему';
 const DARK_LABEL = 'Переключиться на светлую тему';
 
-const $buttons = document.querySelectorAll('[data-button]');
+const $buttons = document.querySelectorAll<HTMLButtonElement>('[data-button]');
 $buttons.forEach(($button) => {
 	$button.addEventListener('click', () => {
 		$button.classList.toggle('is-active');
@@ -16,6 +16,18 @@ $buttons.forEach(($button) => {
 		if (hasTitle) {
 			const title = isActive ? DARK_LABEL : LIGHT_LABEL;
 			$button.setAttribute('title', title);
+		}
+
+		const notification = $button.nextElementSibling;
+		if (notification?.hasAttribute('data-notification')) {
+			notification.textContent = isActive
+				? 'Переключено на тёмную тему. Нажмите ещё раз, чтобы переключиться на светлую тему'
+				: 'Переключено на светлую тему. Нажмите ещё раз, чтобы переключиться на тёмную тему';
+
+			if ($button.hasAttribute('aria-label')) {
+				isActive && $button.setAttribute('aria-label', 'Переключиться на светлую тему, переключатель');
+				!isActive && $button.setAttribute('aria-label', 'Переключиться на тёмную тему, переключатель');
+			}
 		}
 	});
 });

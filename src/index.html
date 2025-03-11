@@ -1,4 +1,3 @@
-<!-- -->
 <!-- eslint-disable @html-eslint/attrs-newline -->
 <!DOCTYPE html>
 <html lang="ru">
@@ -110,6 +109,29 @@
 				data-radio
 			/>
 		</fieldset>
+
+		<h2>Кнопка с кастомным aria-live, без аттрибута title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему, переключатель"
+			data-button
+		>
+			<!--  -->
+		</button>
+		<span aria-live="polite" data-notification></span>
+
+		<h2>Кнопка с кастомным aria-live, с аттрибутом title</h2>
+		<button
+			type="button"
+			class="ui-toggle"
+			aria-label="Переключиться на тёмную тему, переключатель"
+			title="Переключиться на тёмную тему"
+			data-button
+		>
+			<!--  -->
+		</button>
+		<span aria-live="polite" data-notification></span>
 	</body>
 
 	<script src="./scripts.ts" type="module"></script>
